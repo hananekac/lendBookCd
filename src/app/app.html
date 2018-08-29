@@ -1,0 +1,20 @@
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item icon-start (click)="onNavigate(tabsPage)">
+          <ion-icon name="ios-book-outline"></ion-icon>
+          Books
+        </ion-item>
+        <ion-item icon-start (click)="onNavigate(settingsPage)">
+          <ion-icon name="ios-settings-outline"></ion-icon>
+          Settings
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-nav [root]="tabsPage" #content></ion-nav>

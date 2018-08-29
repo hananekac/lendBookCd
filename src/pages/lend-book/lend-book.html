@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button (click) = "closeModal()">fermer</button>
+    </ion-buttons>
+    <ion-title>{{ book.title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+        {{ book.title }} - {{ book.author }}
+    </ion-card-header>
+    <ion-card-content>
+        {{ book.description }}
+        <ion-buttons> 
+          <button ion-button block [disabled]="book.isLended" (click)="lend()">Prêter</button> 
+          <button ion-button block [disabled]="!book.isLended" (click)="return()">Rendre</button>
+        </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
